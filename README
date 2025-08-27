@@ -1,0 +1,124 @@
+Credit Card Fraud Detection using LSTM
+📌 Project Overview
+
+This project implements a deep learning model (LSTM) to detect fraudulent transactions in a credit card dataset.
+The dataset is highly imbalanced (fraud cases are rare compared to legitimate ones). To handle this, we use SMOTE (Synthetic Minority Oversampling Technique) to balance the classes before training.
+
+⚙️ Steps Implemented
+1. Import Libraries
+
+Pandas, NumPy → Data handling
+
+Matplotlib, Seaborn → Data visualization
+
+Scikit-learn → Preprocessing, train-test split, evaluation metrics
+
+Imbalanced-learn (SMOTE) → Handle class imbalance
+
+TensorFlow/Keras → LSTM-based deep learning model
+
+2. Load Dataset
+
+Load dataset creditcard.csv
+
+Check dataset info, head, tail, missing values
+
+3. Class Distribution Check
+
+Fraudulent vs Legitimate transactions distribution
+
+Visualized using count plots
+
+4. Handle Class Imbalance
+
+Applied SMOTE to oversample minority class (fraud transactions)
+
+Verified balanced dataset visually
+
+5. Data Preprocessing
+
+Split dataset into train/test (80-20 split)
+
+Standardized features using StandardScaler
+
+Reshaped input data for LSTM compatibility
+
+6. Model Architecture (LSTM)
+
+LSTM Layer (64 units) with return_sequences=True
+
+Dropout (0.2) to prevent overfitting
+
+LSTM Layer (32 units)
+
+Dense Layer (16, ReLU activation)
+
+Output Layer (Sigmoid activation)
+
+7. Model Training
+
+Optimizer: Adam
+
+Loss: Binary Crossentropy
+
+Metrics: Accuracy
+
+Trained for 10 epochs with batch size 64
+
+8. Model Evaluation
+
+Predictions on test set
+
+Confusion Matrix
+
+Classification Report (Precision, Recall, F1-score)
+
+Accuracy Score
+
+9. Performance Visualization
+
+Training vs Validation Accuracy plot
+
+📊 Results
+
+Balanced dataset after SMOTE
+
+LSTM trained successfully
+
+Confusion matrix and classification report provide insight into fraud detection performance
+🚀 How to Run
+
+Clone this repository:
+git clone https://github.com/yourusername/credit-card-fraud-detection.git
+cd credit-card-fraud-detection
+
+Install required libraries:
+
+pip install -r requirements.txt
+Run the script:
+python fraud_detection.py
+
+📦 Requirements
+
+Python 3.x
+
+pandas, numpy
+
+matplotlib, seaborn
+
+scikit-learn
+
+imbalanced-learn
+
+tensorflow/keras
+
+Install them with:
+pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn tensorflow
+
+📌 Notes
+
+Dataset: Kaggle - Credit Card Fraud Detection
+
+Data is highly imbalanced; hence SMOTE is crucial.
+
+LSTM is chosen due to sequential pattern detection ability, though fraud detection can also be solved with Random Forest, XGBoost, etc.
